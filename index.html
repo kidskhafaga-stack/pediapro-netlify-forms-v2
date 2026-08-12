@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PediaPro - Specialty Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#f4f7f9] text-[#2d3748] font-cairo antialiased">
+    <div id="root"></div>
+    <!-- Netlify Forms blueprint: detected at build time only, never shown to users.
+         Every field name here MUST match a field the React app actually posts in
+         src/utils/flattenSubmission.ts + src/App.tsx, otherwise Netlify drops it
+         from the submission silently. This is what makes the CSV/Excel export in
+         the Netlify dashboard show one clean column per question instead of a
+         single unreadable JSON blob. -->
+    <form
+      name="pediapro-survey"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="pediapro-survey" />
+      <input type="hidden" name="submission_id" />
+      <input type="hidden" name="submitted_at" />
+      <input type="hidden" name="doctor_name" />
+      <input type="hidden" name="degree" />
+      <input type="hidden" name="visit_date" />
+      <input type="hidden" name="email" />
+      <input type="hidden" name="phone" />
+      <input type="hidden" name="common__data_entry" />
+      <input type="hidden" name="common__visit_duration" />
+      <input type="hidden" name="common__first_visit_diff" />
+      <input type="hidden" name="common__mandatory_save_fields" />
+      <input type="hidden" name="common__current_paper" />
+      <input type="hidden" name="common__end_visit_output" />
+      <input type="hidden" name="common__needed_report" />
+      <input type="hidden" name="common__shared_patient" />
+      <input type="hidden" name="selected_specialties" />
+      <input type="hidden" name="spec_endocrinology__measured_every_visit" />
+      <input type="hidden" name="spec_endocrinology__long_term_conditions" />
+      <input type="hidden" name="spec_endocrinology__control_number" />
+      <input type="hidden" name="spec_endocrinology__charts" />
+      <input type="hidden" name="spec_endocrinology__meds_response" />
+      <input type="hidden" name="spec_endocrinology__alerts" />
+      <input type="hidden" name="spec_cardiology__measured_every_visit" />
+      <input type="hidden" name="spec_cardiology__long_term_conditions" />
+      <input type="hidden" name="spec_cardiology__control_number" />
+      <input type="hidden" name="spec_cardiology__charts" />
+      <input type="hidden" name="spec_cardiology__meds_response" />
+      <input type="hidden" name="spec_cardiology__alerts" />
+      <input type="hidden" name="spec_pulmonology__measured_every_visit" />
+      <input type="hidden" name="spec_pulmonology__long_term_conditions" />
+      <input type="hidden" name="spec_pulmonology__control_number" />
+      <input type="hidden" name="spec_pulmonology__charts" />
+      <input type="hidden" name="spec_pulmonology__meds_response" />
+      <input type="hidden" name="spec_pulmonology__alerts" />
+      <input type="hidden" name="spec_neurology__measured_every_visit" />
+      <input type="hidden" name="spec_neurology__long_term_conditions" />
+      <input type="hidden" name="spec_neurology__control_number" />
+      <input type="hidden" name="spec_neurology__charts" />
+      <input type="hidden" name="spec_neurology__meds_response" />
+      <input type="hidden" name="spec_neurology__alerts" />
+      <input type="hidden" name="spec_developmental__measured_every_visit" />
+      <input type="hidden" name="spec_developmental__long_term_conditions" />
+      <input type="hidden" name="spec_developmental__control_number" />
+      <input type="hidden" name="spec_developmental__charts" />
+      <input type="hidden" name="spec_developmental__meds_response" />
+      <input type="hidden" name="spec_developmental__alerts" />
+      <input type="hidden" name="spec_nephrology__measured_every_visit" />
+      <input type="hidden" name="spec_nephrology__long_term_conditions" />
+      <input type="hidden" name="spec_nephrology__control_number" />
+      <input type="hidden" name="spec_nephrology__charts" />
+      <input type="hidden" name="spec_nephrology__meds_response" />
+      <input type="hidden" name="spec_nephrology__alerts" />
+      <input type="hidden" name="spec_gastroenterology__measured_every_visit" />
+      <input type="hidden" name="spec_gastroenterology__long_term_conditions" />
+      <input type="hidden" name="spec_gastroenterology__control_number" />
+      <input type="hidden" name="spec_gastroenterology__charts" />
+      <input type="hidden" name="spec_gastroenterology__meds_response" />
+      <input type="hidden" name="spec_gastroenterology__alerts" />
+      <input type="hidden" name="spec_haematology__measured_every_visit" />
+      <input type="hidden" name="spec_haematology__long_term_conditions" />
+      <input type="hidden" name="spec_haematology__control_number" />
+      <input type="hidden" name="spec_haematology__charts" />
+      <input type="hidden" name="spec_haematology__meds_response" />
+      <input type="hidden" name="spec_haematology__alerts" />
+      <input type="hidden" name="spec_neonatology__measured_every_visit" />
+      <input type="hidden" name="spec_neonatology__long_term_conditions" />
+      <input type="hidden" name="spec_neonatology__control_number" />
+      <input type="hidden" name="spec_neonatology__charts" />
+      <input type="hidden" name="spec_neonatology__meds_response" />
+      <input type="hidden" name="spec_neonatology__alerts" />
+      <input type="hidden" name="spec_ophthalmology__measured_every_visit" />
+      <input type="hidden" name="spec_ophthalmology__long_term_conditions" />
+      <input type="hidden" name="spec_ophthalmology__control_number" />
+      <input type="hidden" name="spec_ophthalmology__charts" />
+      <input type="hidden" name="spec_ophthalmology__meds_response" />
+      <input type="hidden" name="spec_ophthalmology__alerts" />
+      <input type="hidden" name="spec_dentistry__measured_every_visit" />
+      <input type="hidden" name="spec_dentistry__long_term_conditions" />
+      <input type="hidden" name="spec_dentistry__control_number" />
+      <input type="hidden" name="spec_dentistry__charts" />
+      <input type="hidden" name="spec_dentistry__meds_response" />
+      <input type="hidden" name="spec_dentistry__alerts" />
+      <input type="hidden" name="spec_other__spec_name" />
+      <input type="hidden" name="spec_other__fields" />
+      <input type="hidden" name="spec_other__measurements" />
+      <input type="hidden" name="spec_other__conditions" />
+      <input type="hidden" name="spec_other__labs" />
+      <input type="hidden" name="spec_other__meds" />
+      <input type="hidden" name="spec_other__alerts" />
+      <input type="hidden" name="trial__trial_choice" />
+      <input type="hidden" name="trial__facility_type" />
+      <input type="hidden" name="trial__facility_type_other" />
+      <input type="hidden" name="trial__doctor_count" />
+      <input type="hidden" name="trial__specialty_type" />
+      <input type="hidden" name="trial__specialties" />
+      <input type="hidden" name="trial__specialties_other" />
+      <input type="hidden" name="trial__branch_count" />
+      <input type="hidden" name="trial__monthly_visits" />
+      <input type="hidden" name="trial__current_system" />
+      <input type="hidden" name="trial__current_system_name" />
+      <input type="hidden" name="trial__hosting_preference" />
+      <input type="hidden" name="trial__payment_preference" />
+      <input type="hidden" name="trial__monthly_budget" />
+      <input type="hidden" name="trial__annual_budget" />
+      <input type="hidden" name="trial__requested_features" />
+      <input type="hidden" name="trial__requested_features_other" />
+      <input type="hidden" name="trial__purchase_timeline" />
+      <input type="hidden" name="trial__lead_score" />
+      <input type="hidden" name="trial__lead_segment" />
+      <input type="hidden" name="payload" />
+      <input type="text" name="bot-field" />
+    </form>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

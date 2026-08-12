@@ -1,0 +1,8 @@
+{
+  "name": "PediaPro - Specialty Builder",
+  "description": "تطبيق مخصص لأطباء الأطفال لجمع آرائهم حول الحقول والمعلومات التي يحتاجونها داخل نظام PediaPro.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

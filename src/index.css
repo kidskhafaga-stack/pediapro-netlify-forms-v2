@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&display=swap');
+@import "tailwindcss";
+
+/* Register the Arabic typefaces as real Tailwind utilities (font-cairo / font-tajawal).
+   Without this @theme block, "font-cairo" is not a real Tailwind class and every
+   screen silently falls back to the browser's default font. */
+@theme {
+  --font-cairo: 'Cairo', ui-sans-serif, system-ui, sans-serif;
+  --font-tajawal: 'Tajawal', ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  font-family: 'Cairo', ui-sans-serif, system-ui, sans-serif;
+  /* Prevent iOS from bumping the whole page zoom when a form field is focused. */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Cairo', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Headings use the bolder, friendlier Tajawal display face throughout the survey. */
+h1, h2, h3 {
+  font-family: 'Tajawal', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* iOS Safari auto-zooms into any input/select/textarea with a computed font-size
+   under 16px. Almost every field in this form is styled with text-sm (14px), which
+   triggers that zoom on every tap on a doctor's phone. Force 16px on all form
+   controls on small screens while keeping the visual text-sm sizing everywhere else. */
+@media (max-width: 767px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Reserve room for the iPhone home-indicator / gesture bar under sticky footers. */
+.safe-bottom {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
