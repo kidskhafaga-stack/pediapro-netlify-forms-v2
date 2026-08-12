@@ -88,5 +88,7 @@ export const specialtiesList = [
   { id: 'gastroenterology', label: 'الجهاز الهضمي والكبد والتغذية' },
   { id: 'haematology', label: 'أمراض الدم' },
   { id: 'neonatology', label: 'متابعة حديثي الولادة والخُدَّج' },
+  { id: 'ophthalmology', label: 'عيون الأطفال' },
+  { id: 'dentistry', label: 'أسنان الأطفال' },
   { id: 'other', label: 'تخصص آخر' },
 ];

@@ -914,6 +914,198 @@ export const specialtySections: Record<string, SpecialtySection> = {
       }
     ]
   },
+  ophthalmology: {
+    id: 'ophthalmology',
+    title: 'عيون الأطفال',
+    questions: [
+      {
+        id: 'measured_every_visit',
+        title: 'يُقاس في كل زيارة',
+        type: 'checkbox',
+        required: true,
+        options: [
+          { id: 'va', label: 'حدة الإبصار لكل عين 6/6' },
+          { id: 'va_method', label: 'طريقة القياس Snellen / Lea / LogMAR' },
+          { id: 'refraction', label: 'المقاس بعد التوسيع Sph / Cyl / Axis' },
+          { id: 'iop', label: 'ضغط العين مم زئبق' },
+          { id: 'strabismus_angle', label: 'زاوية الحول بريزم PD' },
+          { id: 'eom', label: 'حركة عضلات العين' },
+          { id: 'fundus', label: 'فحص قاع العين' },
+          { id: 'axial_length', label: 'طول محور العين مم' },
+          { id: 'glasses_compliance', label: 'التزام النظارة ساعة/يوم' },
+          { id: 'patch_compliance', label: 'التزام الرقعة ساعة/يوم' },
+          { id: 'add', label: 'أضف', hasAddInput: true },
+        ]
+      },
+      {
+        id: 'long_term_conditions',
+        title: 'الحالات التي تتابعها على المدى الطويل',
+        type: 'checkbox',
+        options: [
+          { id: 'refractive_errors', label: 'عيوب الإبصار الانكسارية' },
+          { id: 'strabismus', label: 'الحول' },
+          { id: 'amblyopia', label: 'كسل العين' },
+          { id: 'progressive_myopia', label: 'قصر النظر التقدّمي' },
+          { id: 'nlds', label: 'انسداد القناة الدمعية' },
+          { id: 'rop', label: 'اعتلال شبكية الخُدَّج' },
+          { id: 'congenital_cataract', label: 'المياه البيضاء الخلقية' },
+          { id: 'congenital_glaucoma', label: 'المياه الزرقاء الخلقية' },
+          { id: 'allergic_conjunctivitis', label: 'التهاب الملتحمة التحسسي' },
+          { id: 'ptosis', label: 'تدلّي الجفن' },
+          { id: 'nystagmus', label: 'ارتعاش العين' },
+          { id: 'add', label: 'أضف', hasAddInput: true },
+        ]
+      },
+      {
+        id: 'control_number',
+        title: 'رقم السيطرة',
+        type: 'composite',
+        required: true,
+        compositeInputs: [
+          { id: 'va_min', label: 'حدة الإبصار لا تقلّ عن', type: 'text' },
+          { id: 'va_diff_max', label: 'والفرق بين العينين لا يزيد عن (سطر)', type: 'number' },
+          { id: 'patch_hours', label: 'الرقعة (ساعة/يوم)', type: 'number' },
+          { id: 'patch_weeks', label: 'لمدة (أسبوع) قبل إعادة التقييم', type: 'number' },
+          { id: 'followup_default', label: 'المتابعة الافتراضية: كل (شهر)', type: 'number' },
+        ]
+      },
+      {
+        id: 'charts',
+        title: 'ما تريد رؤيته كمنحنى عبر الزمن',
+        type: 'checkbox',
+        options: [
+          { id: 'refraction_curve', label: 'المقاس (الانكسار)' },
+          { id: 'va_curve', label: 'حدة الإبصار' },
+          { id: 'iop_curve', label: 'ضغط العين' },
+          { id: 'axial_length_curve', label: 'طول محور العين' },
+          { id: 'strabismus_curve', label: 'زاوية الحول' },
+          { id: 'fundus_photos', label: 'صور قاع العين' },
+          { id: 'rop_schedule', label: 'مواعيد فحص شبكية الخُدَّج' },
+        ]
+      },
+      {
+        id: 'meds_response',
+        title: 'أدوية وتدخلات تتابع استجابتها — وبماذا تقيس الاستجابة',
+        type: 'checkbox',
+        options: [
+          { id: 'glasses', label: 'النظارة ← حدة الإبصار + الالتزام' },
+          { id: 'patch_atropine', label: 'الرقعة / أتروبين للكسل ← حدة الإبصار' },
+          { id: 'iop_drops', label: 'قطرات ضغط العين ← الضغط' },
+          { id: 'allergy_drops', label: 'قطرات الحساسية ← الأعراض' },
+          { id: 'myopia_control_drops', label: 'قطرات تثبيط قصر النظر ← المقاس + طول المحور' },
+        ]
+      },
+      {
+        id: 'alerts',
+        title: 'متى ينبّهك البرنامج من نفسه؟',
+        infoText: 'البندان اللذان عليهما * ليسا من عندك أصلاً: الأول يعرفه طبيب الحضانة، والثاني يعرفه طبيب الصدر أو الكلى الذي كتب الكورتيزون. الملف واحد، فالبرنامج يستطيع أن يقول لك ما لم يقله لك أحد.',
+        type: 'checkbox',
+        options: [
+          { id: 'amblyopia_stuck', label: 'كسل العين لم يتحسّن بعد فترة الرقعة التي حدّدتها' },
+          { id: 'refraction_fast', label: 'المقاس يتدهور بسرعة أكبر من المتوقع' },
+          { id: 'preterm_rop_due', label: 'طفل خديج — ميعاد فحص الشبكية اقترب أو فات *' },
+          { id: 'iop_high', label: 'ضغط العين فوق الحد' },
+          { id: 'long_term_steroid', label: 'الطفل على كورتيزون طويل المدى ← افحص الضغط والعدسة *' },
+          { id: 'never_examined', label: 'لم يُفحص نظره من قبل وعمره تعدّى السن التي حدّدتها' },
+        ]
+      }
+    ]
+  },
+  dentistry: {
+    id: 'dentistry',
+    title: 'أسنان الأطفال',
+    questions: [
+      {
+        id: 'measured_every_visit',
+        title: 'يُقاس في كل زيارة',
+        type: 'checkbox',
+        required: true,
+        options: [
+          { id: 'dmft', label: 'عدد المتسوّس/المحشو/المفقود dmft — DMFT' },
+          { id: 'tooth_chart', label: 'خريطة الأسنان سن بسن' },
+          { id: 'plaque_index', label: 'مؤشر اللويحة ونظافة الفم' },
+          { id: 'gum_status', label: 'حالة اللثة' },
+          { id: 'occlusion', label: 'الإطباق Class I / II / III' },
+          { id: 'crowding', label: 'التزاحم والمسافات' },
+          { id: 'night_feeding', label: 'الرضاعة الليلية' },
+          { id: 'habits', label: 'مص الإصبع / التنفس من الفم' },
+          { id: 'fluoride_source', label: 'مصدر الفلورايد' },
+          { id: 'cooperation', label: 'تعاون الطفل Frankl' },
+          { id: 'pain_swelling', label: 'ألم أو تورّم' },
+          { id: 'add', label: 'أضف', hasAddInput: true },
+        ]
+      },
+      {
+        id: 'long_term_conditions',
+        title: 'الحالات التي تتابعها على المدى الطويل',
+        type: 'checkbox',
+        options: [
+          { id: 'ecc', label: 'تسوّس الطفولة المبكر' },
+          { id: 'gingivitis', label: 'التهاب اللثة' },
+          { id: 'abscess', label: 'خراج أو عدوى سنّية' },
+          { id: 'trauma', label: 'كسر أو خلع بعد رضّة' },
+          { id: 'eruption_disorder', label: 'اضطراب التسنين' },
+          { id: 'malocclusion', label: 'سوء الإطباق والتزاحم' },
+          { id: 'mih', label: 'نقص تكلّس المينا MIH' },
+          { id: 'bruxism', label: 'صرير الأسنان' },
+          { id: 'tongue_tie', label: 'لجام اللسان' },
+          { id: 'special_needs', label: 'احتياجات خاصة / علاج بتخدير' },
+          { id: 'add', label: 'أضف', hasAddInput: true },
+        ]
+      },
+      {
+        id: 'control_number',
+        title: 'رقم السيطرة وميعاد المتابعة',
+        type: 'composite',
+        required: true,
+        compositeInputs: [
+          { id: 'new_caries_max', label: 'سن جديد متسوّس «تحت السيطرة» = (سن أو أقل) بين الزيارتين', type: 'number' },
+          { id: 'followup_default', label: 'المتابعة الافتراضية: كل (شهر)', type: 'number' },
+          { id: 'followup_high_risk', label: 'وللطفل عالي الخطورة كل (شهر)', type: 'number' },
+        ]
+      },
+      {
+        id: 'charts',
+        title: 'ما تريد رؤيته كمنحنى عبر الزمن',
+        type: 'checkbox',
+        options: [
+          { id: 'caries_count_curve', label: 'عدد الأسنان المتسوّسة' },
+          { id: 'tooth_chart_visits', label: 'خريطة الأسنان زيارة بزيارة' },
+          { id: 'plaque_index_curve', label: 'مؤشر اللويحة' },
+          { id: 'panoramic_xray', label: 'أشعة بانوراما' },
+          { id: 'bitewing_xray', label: 'أشعة لدغة Bitewing' },
+          { id: 'before_after_photos', label: 'صور قبل وبعد' },
+        ]
+      },
+      {
+        id: 'meds_response',
+        title: 'تدخلات تتابع نتيجتها',
+        type: 'checkbox',
+        options: [
+          { id: 'fluoride_varnish', label: 'طلاء الفلورايد ← تسوّس جديد + تاريخ آخر جلسة' },
+          { id: 'sealants', label: 'الحافظات (سيلانت) ← سلامتها في الزيارة التالية' },
+          { id: 'filling_pulp', label: 'الحشو / علاج العصب اللبني ← الألم + الأشعة' },
+          { id: 'crown_extraction', label: 'التاج أو الخلع' },
+          { id: 'space_maintainer', label: 'حافظ المسافة ← مكان السن الدائم' },
+          { id: 'antibiotic', label: 'مضاد حيوي ← التورّم والحرارة' },
+        ]
+      },
+      {
+        id: 'alerts',
+        title: 'متى ينبّهك البرنامج من نفسه؟',
+        infoText: 'الثلاثة اللي عليهم * هي حجّة هذا البرنامج كله في جملة واحدة. طبيب الأسنان لا يعرف أن الطفل عنده فتحة في القلب ولا أنه على فينيتوين ولا أن عنده حساسية من البنسلين — إلا لو سأل الأم وتذكّرت. الملف واحد، وفحص التعارضات موجود بالفعل قبل طباعة الروشتة؛ ما ينقص هو أن تصل المعلومة إلى الكرسي.',
+        type: 'checkbox',
+        options: [
+          { id: 'fluoride_due', label: 'ميعاد الفلورايد فات' },
+          { id: 'new_caries_despite_followup', label: 'تسوّس جديد رغم انتظام المتابعة' },
+          { id: 'heart_defect_prophylaxis', label: 'الطفل عنده عيب في القلب ← وقاية بمضاد حيوي قبل الخلع *' },
+          { id: 'penicillin_allergy', label: 'حساسية من البنسلين قبل وصف المضاد الحيوي *' },
+          { id: 'gum_hyperplasia_risk', label: 'على دواء يسبّب تضخّم اللثة أو شراب مُحلّى طويل المدى *' },
+          { id: 'no_visit_since_one', label: 'لم يزر عيادة الأسنان منذ تجاوز السنة الأولى' },
+        ]
+      }
+    ]
+  },
   other: {
     id: 'other',
     title: 'تخصص آخر',
