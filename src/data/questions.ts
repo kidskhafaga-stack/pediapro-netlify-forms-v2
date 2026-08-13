@@ -432,7 +432,8 @@ export const specialtySections: Record<string, SpecialtySection> = {
         type: 'composite',
         required: true,
         compositeInputs: [
-          { id: 'seizures_max', label: '«مسيطَر عليه» = نوبة أو أقل خلال (شهر)', type: 'number' },
+          { id: 'seizures_max', label: '«مسيطَر عليه» = عدد النوبات الأقصى', type: 'number' },
+          { id: 'seizures_period_months', label: 'خلال مدة قدرها (شهر)', type: 'number' },
           { id: 'followup_stable', label: 'المتابعة الافتراضية: المستقر كل (شهر)', type: 'number' },
           { id: 'followup_changed', label: 'بعد تغيير الدواء بعد (أسبوع)', type: 'number' },
         ]
